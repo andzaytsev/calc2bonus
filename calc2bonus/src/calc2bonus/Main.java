@@ -64,9 +64,16 @@ public class Main {
 				continue;
 			}
 			for (String person : people) {
-				if (!st.get(person).match(position)) {
-					isAns = false;
-					break;
+				if (!position.get(person)) { //TA
+					if (!st.get(person).match(position)) {
+						isAns = false;
+						break;
+					}
+				} else { //Prof
+					if (st.get(person).match(position)) {
+						isAns = false;
+						break;
+					}
 				}
 			}
 			if (isAns) {
